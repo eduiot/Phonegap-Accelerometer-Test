@@ -13,7 +13,7 @@
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript">
 	var gWatchID = null;
-	var gOptions = { frequency: 3000 };  // Update every 3 seconds
+	var gOptions = { frequency: 2000 };  // Update every 3 seconds
 	//
     // Wait for PhoneGap to load
 	document.addEventListener("deviceready", onDeviceReady, false);
@@ -31,7 +31,7 @@
 		document.getElementById('timestamp').innerHTML = acceleration.timestamp;
 	}
 	function accelOff() {
-		navigator.accelerometer.clearWatch(WatchID);
+		navigator.accelerometer.clearWatch(gWatchID);
 	}
 
 	//
@@ -52,7 +52,10 @@
 </head>
 <body onload="onLoad()">
 <div class="button button-block button-large"><img align=left src=favicon-48x48.png>Phonegap Accelerometer Test</div>
-<span onclick='accelOff();navigator.app.exitApp()'><button class="button button-pill button-primary button-large" style="margin:1em;">Exit</button></span>
+
+<span onclick='accelOff()'><button class="button button-pill button-primary button-large" style="margin:1em;">Clear Watch</button></span>
+
+<span onclick='navigator.app.exitApp()'><button class="button button-pill button-primary button-large" style="margin:1em;float:right;">Exit</button></span>
 
 
 <div id=ax class="button button-block button-action button-large" style="margin:1em;">X <span id=accelX></span></div>
