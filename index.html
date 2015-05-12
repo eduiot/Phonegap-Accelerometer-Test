@@ -36,6 +36,11 @@
 
 	//
 	function onDeviceReady() {
+		// hide Exit button. They don't have one on iOS devices.
+		if (device.platform === "iOS") {
+			//alert("got iOS");
+			$("#exitApp").addClass("hidden");
+		}
 		navigator.accelerometer.getCurrentAcceleration(accelUpdate, function() {alert("Error on getCurrentAccel");});
 		gWatchID = navigator.accelerometer.watchAcceleration(accelUpdate,
 				function() {
@@ -55,7 +60,7 @@
 <p />&nbsp;<p />
 <span onclick='accelOff()'><button class="button button-pill button-primary button-large" style="margin:0.1em">Clear Watch</button></span>
 
-<span onclick='navigator.app.exitApp()'><button class="button button-pill button-primary button-large" style="margin:0.1em;float:right;">Exit</button></span>
+<span onclick='navigator.app.exitApp()'><button id=exitApp class="button button-pill button-primary button-large" style="margin:0.1em;float:right;">Exit</button></span>
 
 
 <div id=ax class="button button-block button-action button-large" style="margin:1em;">X <span id=accelX></span></div>
