@@ -7,9 +7,10 @@
     <style>
     body {margin:0px;font-size:large;}
 	.hidden {visibility:collapse;display:none;}
-	.expose {visibility:visible;display:block;} // Here for completeness only.
+	.expose {visibility:visible;display:block;}
 	.copyright {padding:5px;align:left;font-style:italic;font-size:small;}
 	#exitApp {margin:0.1em;float:right;}
+	#clearWatch {margin:0.1em;}
     </style>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript">
@@ -59,7 +60,7 @@
 <body onload="onLoad()">
 <div class="button button-block button-large"><img align=left src=favicon-48x48.png>Phonegap Accelerometer Test</div>
 <p />&nbsp;<p />
-<span onclick='accelOff()'><button class="button button-pill button-primary button-large" style="margin:0.1em">Clear Watch</button></span>
+<button id=clearWatch onclick='accelOff()' class="button button-pill button-primary button-large">Clear Watch</button>
 
 <button id=exitApp onclick='navigator.app.exitApp()' class="button button-pill button-primary button-large">Exit</button>
 
