@@ -39,7 +39,7 @@
 		// hide Exit button. They don't have one on iOS devices.
 		if (device.platform === "iOS") {
 			//alert("got iOS");
-			$("#exitApp").addClass("hidden");
+			document.getElementById('exitApp').addClass("hidden");
 		}
 		navigator.accelerometer.getCurrentAcceleration(accelUpdate, function() {alert("Error on getCurrentAccel");});
 		gWatchID = navigator.accelerometer.watchAcceleration(accelUpdate,
