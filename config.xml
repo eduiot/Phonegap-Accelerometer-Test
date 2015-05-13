@@ -16,7 +16,6 @@
 		<gap:platform name="ios" />
 
         <preference name="permissions" value="none"/>
-		<preference name="fullscreen"  value="false" />
         <gap:plugin name="org.apache.cordova.device-motion" />
 		<!-- device required so we can detect if we are using iOS -->
         <gap:plugin name="org.apache.cordova.device" />
