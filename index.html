@@ -38,7 +38,7 @@
 	function onDeviceReady() {
 		// hide Exit button. They don't have one on iOS devices.
 		if (device.platform === "iOS") {
-			//alert("got iOS");
+			alert("got iOS:" + device.platform);
 			document.getElementById('exitApp').addClass("hidden");
 		}
 		navigator.accelerometer.getCurrentAcceleration(accelUpdate, function() {alert("Error on getCurrentAccel");});
