@@ -9,6 +9,7 @@
 	.hidden {visibility:collapse;display:none;}
 	.expose {visibility:visible;display:block;} // Here for completeness only.
 	.copyright {padding:5px;align:left;font-style:italic;font-size:small;}
+	#exitApp {margin:0.1em;float:right;}
     </style>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript">
@@ -60,7 +61,7 @@
 <p />&nbsp;<p />
 <span onclick='accelOff()'><button class="button button-pill button-primary button-large" style="margin:0.1em">Clear Watch</button></span>
 
-<span onclick='navigator.app.exitApp()'><button id=exitApp class="button button-pill button-primary button-large" style="margin:0.1em;float:right;">Exit</button></span>
+<span onclick='navigator.app.exitApp()'><button id=exitApp class="button button-pill button-primary button-large">Exit</button></span>
 
 
 <div id=ax class="button button-block button-action button-large" style="margin:1em;">X <span id=accelX></span></div>
