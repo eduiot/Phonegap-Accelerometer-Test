@@ -9,16 +9,20 @@
     .hidden {visibility:collapse;display:none;}
     .expose {visibility:visible;display:block;}
     .copyright {padding:5px;align:left;font-style:italic;font-size:small;}
+    #header {margin:0;padding:0;}
     #exitApp {margin:0.1em;float:right;}
     #clearWatch {margin:0.1em;}
     </style>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="fastclick.js"></script>
     <script type="text/javascript">
     var gWatchID = null;
     var gOptions = { frequency: 2000 };  // Update every 3 seconds
     //
     // Wait for PhoneGap to load
     document.addEventListener("deviceready", onDeviceReady, false);
+    // Get rid of 300ms delay 
+    document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }, false);
     //
     function accelClear() {
         document.getElementById('accelX').innerHTML = '&nbsp;';
@@ -62,12 +66,14 @@
     </script>
 </head>
 <body onload="onLoad()">
-<div class="button button-block button-large"><img align=left src=favicon-48x48.png>Phonegap Accelerometer Test</div>
+<div id=header class="button button-block button-large">
+    <img align=left src=favicon-48x48.png>
+    Phonegap Accelerometer Test
+</div>
 <p />&nbsp;<p />
 <button id=clearWatch onclick='accelOff()' class="button button-pill button-primary button-large">Clear Watch</button>
 
 <button id=exitApp onclick='navigator.app.exitApp()' class="button button-pill button-primary button-large">Exit</button>
-
 
 <div id=ax class="button button-block button-action button-large" style="margin:1em;">X <span id=accelX></span></div>
 
@@ -82,9 +88,3 @@
 </div>
 </body>
 </html>
-
-
-
-
-
-
